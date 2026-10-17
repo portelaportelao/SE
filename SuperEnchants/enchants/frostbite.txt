@@ -1,0 +1,48 @@
+disabled: false
+display_name: "<blue>Frostbite"
+description:
+  - "<gray>Slow your target down when you hit them."
+max_level: 3
+applicable_items:
+  - SWORDS
+  - AXES
+  - MACE
+  - TRIDENT
+trigger: ATTACK_ENTITY
+target: ALL_ENTITIES
+cooldown: 3000
+enchanting_table:
+  enabled: true
+  weight: 5
+  min_cost: 8
+  max_cost: 25
+
+villager_trades:
+  enabled: true
+  weight: 5
+  base_emerald_cost: 8
+  max_emerald_cost: 18
+sound:
+  type: block.glass.break
+  volume: 0.6
+  pitch: 1.2
+
+particle:
+  type: SNOWFLAKE
+  count: 10
+  spread: 0.5
+  speed: 0.1
+  location: TARGET
+
+actions:
+  slow:
+    type: potion_effect
+    effect: slowness
+    duration:
+      base: 20
+      per_level: 15
+    amplifier:
+      scaling: fixed
+      value: 0
+    particles: true
+    icon: true
